@@ -6,7 +6,7 @@ COPY package*.json ./
 
 RUN npm install --verbose
 
-COPY ./dist /usr/share/nginx/html
+COPY . .
 
 RUN npm run build --prod
 
