@@ -8,11 +8,11 @@ RUN npm install --verbose
 
 COPY . .
 
-RUN npm run build --prod -- --base-href /ashokitecommstore/
+RUN npm run build --prod -- --base-href /
 
 FROM nginx:alpine
 
-COPY --from=build /app/dist/ecommerce_frontend /usr/share/nginx/html/ashokitecommstore
+COPY --from=build /app/dist/ecommerce_frontend /usr/share/nginx/html/
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
